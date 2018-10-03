@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pathfinder Weapon creation calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Main.js"></script>
+
+</head>
+<body onload="Populate()">
+    <datalist id = "enhancements">
+    </datalist>
+    <datalist id="WeaponList">
+
+    </datalist>
+    <h1>Pathfinder Magic Weapon Calculator</h1>
+    <h2>Select Weapon: <input type="text" name="WeaponSelect" id="WeaponSelect" placeholder="Choose your Weapon Type"></h2>
+    <div id = "EnhancementForm">
+        <form id = "EnhancementSelect" name = "EnhancementSelect" action="#"> 
+            <h2 style="text-align: left"> select enchantments:</h2> 
+            <span> Base Enhancement <input id="numericEnhancement" type="number" name = "Enhancement" min = "1" max = "5" default ="1" placeholder="1 to 5"> </span>
+            Enchantment A: <input id = "Enhancement1"  name = "Enhancement1" list = "enhancements" placeholder="Special Ability">
+            <button id = "enhancement+A" onclick="addEnchantBox1()" type ="button" style = "display: inline" >+</button>
+            <span id ="EnhancementAddA" style="display: none"> + Enhancement B: <input id="Enhancement2" list = "enhancements" display = "none" placeholder="Special Ability"> </span>
+            <button id = "enhancement+B" onclick="addEnchantBox2()" type ="button" style = "display: none" >+</button>
+            <span id ="EnhancementAddB" style="display: none"> + Enhancement C: <input id="Enhancement3" list = "enhancements" display = "none" placeholder="Special Ability"> </span>
+            <span id="Enchantment Price">Total Price: <span id="FinalPrice"></span>
+            <button id ="StartCalc" type="button" onclick="Calculation()">Find Price</button> <br>
+            <h4 id = "SpecificEnchantments" style="display: inline"> Specific Enchantments: 
+                <input class = "checkbox"id ="Impervious"name = "Ability" type="checkbox" style="display:inline">Impervious   
+                <input class = "checkbox"id = "Glamered" name = "Ability" type="checkbox" style="display:inline">Glamered   
+                <input class = "checkbox"id = "Transformative" name = "Ability" type="checkbox" style="display:inline">Transformative   
+                <input class = "checkbox"id = "Dueling" name = "Ability" type="checkbox" style="display:inline"> Dueling
+            </h4>          
+        </form>
+    </div>
+    <p id = "test">
+
+    </p>
+</body>
+<footer>
+    <p>Uses Information from the <a href="http://paizo.com/pathfinderRPG/prd/">Pathfinder Reference Document(PRD)</a></p>
+    <p>As well as that consolidated and provided by <a href="https://www.d20pfsrd.com">D20pfsrd</a></p>
+</footer>
+</html>
